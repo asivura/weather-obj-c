@@ -9,10 +9,23 @@
 /* Begin PBXBuildFile section */
 		8B373B751C06C9EA001E37FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373B741C06C9EA001E37FF /* main.m */; };
 		8B373B781C06C9EA001E37FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373B771C06C9EA001E37FF /* AppDelegate.m */; };
-		8B373B811C06C9EA001E37FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B373B7F1C06C9EA001E37FF /* Main.storyboard */; };
 		8B373B831C06C9EA001E37FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B373B821C06C9EA001E37FF /* Assets.xcassets */; };
-		8B373B861C06C9EA001E37FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B373B841C06C9EA001E37FF /* LaunchScreen.storyboard */; };
+		8B373B8F1C0791BD001E37FF /* CoreComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373B8E1C0791BD001E37FF /* CoreComponents.m */; };
+		8B373B921C0791E0001E37FF /* ApplicationAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373B911C0791E0001E37FF /* ApplicationAssembly.m */; };
+		8B373B941C0791F6001E37FF /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B373B931C0791F6001E37FF /* Configuration.plist */; };
+		8B373B971C07CD88001E37FF /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373B961C07CD88001E37FF /* City.m */; };
+		8B373B9A1C07CE76001E37FF /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373B991C07CE76001E37FF /* Weather.m */; };
+		8B373B9D1C07CE86001E37FF /* Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373B9C1C07CE86001E37FF /* Main.m */; };
+		8B373BA01C07CE9A001E37FF /* Wind.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373B9F1C07CE9A001E37FF /* Wind.m */; };
+		8B373BA31C07CEF7001E37FF /* Clouds.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BA21C07CEF7001E37FF /* Clouds.m */; };
+		8B373BA61C07CF0C001E37FF /* Rain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BA51C07CF0C001E37FF /* Rain.m */; };
+		8B373BA91C07CF39001E37FF /* Snow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BA81C07CF39001E37FF /* Snow.m */; };
+		8B373BAC1C07CFA9001E37FF /* Sys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BAB1C07CFA9001E37FF /* Sys.m */; };
+		8B373BAF1C07CFBF001E37FF /* Coord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BAE1C07CFBF001E37FF /* Coord.m */; };
+		8B373BB21C07D44D001E37FF /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BB01C07D44D001E37FF /* DateFormatter.m */; };
 		972DBA9559296BDAD8553710 /* libPods-Weather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B9717E9971F91CBE7EEAA8 /* libPods-Weather.a */; };
+		D578D8FF87ABC1FC1E764480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D578D0208987D969144E011B /* Main.storyboard */; };
+		D578DA5F503E1718F5300A10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D578D031AC5D9F4B7DE64212 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +35,35 @@
 		8B373B741C06C9EA001E37FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8B373B761C06C9EA001E37FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8B373B771C06C9EA001E37FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8B373B801C06C9EA001E37FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B373B821C06C9EA001E37FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B373B851C06C9EA001E37FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B373B871C06C9EA001E37FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B373B8D1C0791BD001E37FF /* CoreComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreComponents.h; sourceTree = "<group>"; };
+		8B373B8E1C0791BD001E37FF /* CoreComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreComponents.m; sourceTree = "<group>"; };
+		8B373B901C0791E0001E37FF /* ApplicationAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationAssembly.h; sourceTree = "<group>"; };
+		8B373B911C0791E0001E37FF /* ApplicationAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationAssembly.m; sourceTree = "<group>"; };
+		8B373B931C0791F6001E37FF /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		8B373B951C07CD88001E37FF /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		8B373B961C07CD88001E37FF /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		8B373B981C07CE76001E37FF /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		8B373B991C07CE76001E37FF /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		8B373B9B1C07CE86001E37FF /* Main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.h; sourceTree = "<group>"; };
+		8B373B9C1C07CE86001E37FF /* Main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Main.m; sourceTree = "<group>"; };
+		8B373B9E1C07CE9A001E37FF /* Wind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wind.h; sourceTree = "<group>"; };
+		8B373B9F1C07CE9A001E37FF /* Wind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wind.m; sourceTree = "<group>"; };
+		8B373BA11C07CEF7001E37FF /* Clouds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clouds.h; sourceTree = "<group>"; };
+		8B373BA21C07CEF7001E37FF /* Clouds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clouds.m; sourceTree = "<group>"; };
+		8B373BA41C07CF0C001E37FF /* Rain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rain.h; sourceTree = "<group>"; };
+		8B373BA51C07CF0C001E37FF /* Rain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rain.m; sourceTree = "<group>"; };
+		8B373BA71C07CF39001E37FF /* Snow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snow.h; sourceTree = "<group>"; };
+		8B373BA81C07CF39001E37FF /* Snow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snow.m; sourceTree = "<group>"; };
+		8B373BAA1C07CFA9001E37FF /* Sys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sys.h; sourceTree = "<group>"; };
+		8B373BAB1C07CFA9001E37FF /* Sys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sys.m; sourceTree = "<group>"; };
+		8B373BAD1C07CFBF001E37FF /* Coord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coord.h; sourceTree = "<group>"; };
+		8B373BAE1C07CFBF001E37FF /* Coord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coord.m; sourceTree = "<group>"; };
+		8B373BB01C07D44D001E37FF /* DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateFormatter.m; sourceTree = "<group>"; };
+		8B373BB11C07D44D001E37FF /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
+		D578D2B8690F0FDD74B8CF27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weather/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		D578D798B2589CA336BF33BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weather/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		E86D148281B450DA16A2CFEE /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,11 +119,15 @@
 			children = (
 				8B373B761C06C9EA001E37FF /* AppDelegate.h */,
 				8B373B771C06C9EA001E37FF /* AppDelegate.m */,
-				8B373B7F1C06C9EA001E37FF /* Main.storyboard */,
 				8B373B821C06C9EA001E37FF /* Assets.xcassets */,
-				8B373B841C06C9EA001E37FF /* LaunchScreen.storyboard */,
 				8B373B871C06C9EA001E37FF /* Info.plist */,
 				8B373B731C06C9EA001E37FF /* Supporting Files */,
+				D578DC9DAFE8798689FB37E4 /* UserInterface */,
+				D578DC96325D6D886B5D8407 /* Model */,
+				D578D2DD4BE22330F9DCA067 /* Dao */,
+				D578D47BA4B7B99169DB19B5 /* Client */,
+				D578D40150606E6FF6055437 /* Assembly */,
+				D578D933E90E06E4CFCF3CC9 /* Resources */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -96,6 +138,75 @@
 				8B373B741C06C9EA001E37FF /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D578D2DD4BE22330F9DCA067 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		D578D40150606E6FF6055437 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8B373B931C0791F6001E37FF /* Configuration.plist */,
+				8B373B8D1C0791BD001E37FF /* CoreComponents.h */,
+				8B373B8E1C0791BD001E37FF /* CoreComponents.m */,
+				8B373B901C0791E0001E37FF /* ApplicationAssembly.h */,
+				8B373B911C0791E0001E37FF /* ApplicationAssembly.m */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		D578D47BA4B7B99169DB19B5 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		D578D933E90E06E4CFCF3CC9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D578DC96325D6D886B5D8407 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B373BB01C07D44D001E37FF /* DateFormatter.m */,
+				8B373BB11C07D44D001E37FF /* DateFormatter.h */,
+				8B373B951C07CD88001E37FF /* City.h */,
+				8B373B961C07CD88001E37FF /* City.m */,
+				8B373B981C07CE76001E37FF /* Weather.h */,
+				8B373B991C07CE76001E37FF /* Weather.m */,
+				8B373B9B1C07CE86001E37FF /* Main.h */,
+				8B373B9C1C07CE86001E37FF /* Main.m */,
+				8B373B9E1C07CE9A001E37FF /* Wind.h */,
+				8B373B9F1C07CE9A001E37FF /* Wind.m */,
+				8B373BA11C07CEF7001E37FF /* Clouds.h */,
+				8B373BA21C07CEF7001E37FF /* Clouds.m */,
+				8B373BA41C07CF0C001E37FF /* Rain.h */,
+				8B373BA51C07CF0C001E37FF /* Rain.m */,
+				8B373BA71C07CF39001E37FF /* Snow.h */,
+				8B373BA81C07CF39001E37FF /* Snow.m */,
+				8B373BAA1C07CFA9001E37FF /* Sys.h */,
+				8B373BAB1C07CFA9001E37FF /* Sys.m */,
+				8B373BAD1C07CFBF001E37FF /* Coord.h */,
+				8B373BAE1C07CFBF001E37FF /* Coord.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D578DC9DAFE8798689FB37E4 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				D578D0208987D969144E011B /* Main.storyboard */,
+				D578D031AC5D9F4B7DE64212 /* LaunchScreen.storyboard */,
+			);
+			path = UserInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,9 +269,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B373B861C06C9EA001E37FF /* LaunchScreen.storyboard in Resources */,
 				8B373B831C06C9EA001E37FF /* Assets.xcassets in Resources */,
-				8B373B811C06C9EA001E37FF /* Main.storyboard in Resources */,
+				8B373B941C0791F6001E37FF /* Configuration.plist in Resources */,
+				D578D8FF87ABC1FC1E764480 /* Main.storyboard in Resources */,
+				D578DA5F503E1718F5300A10 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +331,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B373B9A1C07CE76001E37FF /* Weather.m in Sources */,
+				8B373B971C07CD88001E37FF /* City.m in Sources */,
+				8B373BA31C07CEF7001E37FF /* Clouds.m in Sources */,
+				8B373BAC1C07CFA9001E37FF /* Sys.m in Sources */,
+				8B373BB21C07D44D001E37FF /* DateFormatter.m in Sources */,
+				8B373B9D1C07CE86001E37FF /* Main.m in Sources */,
+				8B373BA01C07CE9A001E37FF /* Wind.m in Sources */,
+				8B373BA61C07CF0C001E37FF /* Rain.m in Sources */,
+				8B373B921C0791E0001E37FF /* ApplicationAssembly.m in Sources */,
+				8B373BAF1C07CFBF001E37FF /* Coord.m in Sources */,
+				8B373BA91C07CF39001E37FF /* Snow.m in Sources */,
 				8B373B781C06C9EA001E37FF /* AppDelegate.m in Sources */,
+				8B373B8F1C0791BD001E37FF /* CoreComponents.m in Sources */,
 				8B373B751C06C9EA001E37FF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,18 +351,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8B373B7F1C06C9EA001E37FF /* Main.storyboard */ = {
+		D578D0208987D969144E011B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8B373B801C06C9EA001E37FF /* Base */,
+				D578D2B8690F0FDD74B8CF27 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		8B373B841C06C9EA001E37FF /* LaunchScreen.storyboard */ = {
+		D578D031AC5D9F4B7DE64212 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8B373B851C06C9EA001E37FF /* Base */,
+				D578D798B2589CA336BF33BF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

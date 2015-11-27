@@ -1,12 +1,17 @@
 PODS:
+  - Mantle (2.0.5):
+    - Mantle/extobjc (= 2.0.5)
+  - Mantle/extobjc (2.0.5)
   - Typhoon (3.4.4):
     - Typhoon/no-arc (= 3.4.4)
   - Typhoon/no-arc (3.4.4)
 
 DEPENDENCIES:
+  - Mantle
   - Typhoon
 
 SPEC CHECKSUMS:
+  Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   Typhoon: e937c62b9048f73a93c1aa94f00627d97cecd588
 
 COCOAPODS: 0.39.0
