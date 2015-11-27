@@ -1,8 +1,10 @@
 //
-// Created by Alexander Sivura on 01.09.15.
-// Copyright (c) 2015 My Knowledge Lab. All rights reserved.
+//  DateFormatter.m
+//  Weather
 //
-
+//  Created by Alexander Sivura on 26/11/15.
+//  Copyright © 2015 Alexander Sivura. All rights reserved.
+//
 #import <Foundation/Foundation.h>
 
 

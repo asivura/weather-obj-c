@@ -23,6 +23,7 @@
 		8B373BAC1C07CFA9001E37FF /* Sys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BAB1C07CFA9001E37FF /* Sys.m */; };
 		8B373BAF1C07CFBF001E37FF /* Coord.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BAE1C07CFBF001E37FF /* Coord.m */; };
 		8B373BB21C07D44D001E37FF /* DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BB01C07D44D001E37FF /* DateFormatter.m */; };
+		8B373BB51C07E32A001E37FF /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BB31C07E32A001E37FF /* SessionManager.m */; };
 		972DBA9559296BDAD8553710 /* libPods-Weather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B9717E9971F91CBE7EEAA8 /* libPods-Weather.a */; };
 		D578D8FF87ABC1FC1E764480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D578D0208987D969144E011B /* Main.storyboard */; };
 		D578DA5F503E1718F5300A10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D578D031AC5D9F4B7DE64212 /* LaunchScreen.storyboard */; };
@@ -62,6 +63,8 @@
 		8B373BAE1C07CFBF001E37FF /* Coord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coord.m; sourceTree = "<group>"; };
 		8B373BB01C07D44D001E37FF /* DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateFormatter.m; sourceTree = "<group>"; };
 		8B373BB11C07D44D001E37FF /* DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateFormatter.h; sourceTree = "<group>"; };
+		8B373BB31C07E32A001E37FF /* SessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionManager.m; sourceTree = "<group>"; };
+		8B373BB41C07E32A001E37FF /* SessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionManager.h; sourceTree = "<group>"; };
 		D578D2B8690F0FDD74B8CF27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weather/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		D578D798B2589CA336BF33BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weather/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		E86D148281B450DA16A2CFEE /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 		D578D47BA4B7B99169DB19B5 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				8B373BB31C07E32A001E37FF /* SessionManager.m */,
+				8B373BB41C07E32A001E37FF /* SessionManager.h */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				8B373BA61C07CF0C001E37FF /* Rain.m in Sources */,
 				8B373B921C0791E0001E37FF /* ApplicationAssembly.m in Sources */,
 				8B373BAF1C07CFBF001E37FF /* Coord.m in Sources */,
+				8B373BB51C07E32A001E37FF /* SessionManager.m in Sources */,
 				8B373BA91C07CF39001E37FF /* Snow.m in Sources */,
 				8B373B781C06C9EA001E37FF /* AppDelegate.m in Sources */,
 				8B373B8F1C0791BD001E37FF /* CoreComponents.m in Sources */,
