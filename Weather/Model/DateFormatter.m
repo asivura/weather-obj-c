@@ -37,9 +37,9 @@
 - (NSValueTransformer *)dateTransformer {
     if (!_dateTransformer) {
         _dateTransformer = [MTLValueTransformer transformerUsingForwardBlock:^id(NSString *dateString, BOOL *success, NSError *__autoreleasing *error) {
-            return [self.dateFormatter dateFromString:dateString];
+            return [NSDate dateWithTimeIntervalSince1970:dateString.integerValue];
         } reverseBlock:^id(NSDate *date, BOOL *success, NSError *__autoreleasing *error) {
-            return [self.dateFormatter stringFromDate:date];
+            return [NSString stringWithFormat:@"%lf", date.timeIntervalSince1970];;
         }];
     }
     return _dateTransformer;

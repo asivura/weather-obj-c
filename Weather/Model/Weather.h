@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Mantle/Mantle.h>
 
 @interface Weather : MTLModel<MTLJSONSerializing>
 

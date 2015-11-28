@@ -12,9 +12,10 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{@"temp" : @"temp",
+             @"humidity" : @"humidity",
              @"pressure" : @"pressure",
-             @"temp_min" : @"tempMin",
-             @"temp_max" : @"tempMax"};
+             @"tempMin" : @"temp_min",
+             @"tempMax" : @"temp_max"};
 }
 
 @end

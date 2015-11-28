@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Mantle/MTLModel.h>
+#import <Mantle/MTLJSONAdapter.h>
 
 @interface Sys : MTLModel<MTLJSONSerializing>
 

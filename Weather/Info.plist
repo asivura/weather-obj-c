@@ -46,5 +46,19 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>TyphoonInitialAssemblies</key>
+	<array>
+		<string>ApplicationAssembly</string>
+		<string>CoreComponents</string>
+	</array>
+    <key>TyphoonGlobalConfigFilenames</key>
+    <array>
+        <string>Configuration.plist</string>
+    </array>
 </dict>
 </plist>

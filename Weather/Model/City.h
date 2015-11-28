@@ -20,7 +20,7 @@
 @interface City : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, copy) Coord *coord;
-@property (nonatomic, copy) Weather *weather;
+@property (nonatomic, copy) NSArray *weather;
 @property (nonatomic, copy) NSString *base;
 @property (nonatomic, copy) Main *main;
 @property (nonatomic, copy) Wind *wind;
@@ -31,6 +31,5 @@
 @property (nonatomic, copy) Sys *sys;
 @property (nonatomic, copy) NSNumber *id;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSNumber *cod;
 
 @end

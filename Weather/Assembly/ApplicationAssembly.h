@@ -9,8 +9,15 @@
 #import <Typhoon/Typhoon.h>
 #import "AppDelegate.h"
 
+@class CitiesTableViewController;
+@class CoreComponents;
+
 @interface ApplicationAssembly : TyphoonAssembly
 
+@property(nonatomic, strong, readonly) CoreComponents *coreComponents;
+
 - (AppDelegate *)appDelegate;
+
+- (CitiesTableViewController *) citiesTableViewController;
 
 @end

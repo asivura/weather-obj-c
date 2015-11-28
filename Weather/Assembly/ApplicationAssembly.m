@@ -7,12 +7,10 @@
 //
 
 #import "ApplicationAssembly.h"
+#import "CitiesTableViewController.h"
+#import "CoreComponents.h"
 
 @implementation ApplicationAssembly
-
-//-------------------------------------------------------------------------------------------
-#pragma mark - Bootstrapping
-//-------------------------------------------------------------------------------------------
 
 - (AppDelegate *)appDelegate
 {
@@ -21,10 +19,11 @@
             }];
 }
 
+- (CitiesTableViewController *)citiesTableViewController {
+    return [TyphoonDefinition withClass:[CitiesTableViewController class] configuration:^(TyphoonDefinition *definition) {
+        [definition injectProperty:@selector(weatherClient) with:[_coreComponents weatherClient]];
 
-- (id)configurer
-{
-    return [TyphoonDefinition withConfigName:@"Configuration.plist"];
+    }];
 }
 
 @end

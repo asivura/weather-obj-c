@@ -15,8 +15,9 @@ typedef void(^DataTaskCompletionBlock)(NSURLSessionDataTask * task, id responseO
 @interface SessionManager : NSObject
 
 @property (strong, nonatomic) AFHTTPSessionManager *manager;
+@property (strong, nonatomic) NSString *apiKey;
 
-- (NSURLSessionDataTask *)GET:(NSString *)url parameters:(id)parameters modelClass:(Class)modeClass completion:(DataTaskCompletionBlock)block;
+- (void)GET:(NSString *)url parameters:(NSDictionary *)parameters modelClass:(Class)modeClass completion:(DataTaskCompletionBlock)block;
 
 -(void) cancelAllTasks;
 

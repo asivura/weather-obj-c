@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>service.url</key>
-	<string>NSURL(http://api.worldweatheronline.com/free/v2/weather.ashx)</string>
+	<string>NSURL(http://api.openweathermap.org/data/2.5)</string>
 	<key>api.key</key>
-	<string>$$YOUR_API_KEY_HERE$$</string>
+	<string>402251b746de2a233f9c58180a94e64e</string>
 </dict>
 </plist>

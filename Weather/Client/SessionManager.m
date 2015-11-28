@@ -16,8 +16,26 @@ typedef void (^ParserCompletionBlock)(id modelObject);
 
 @implementation SessionManager
 
-- (NSURLSessionDataTask *)GET:(NSString *)url parameters:(id)parameters modelClass:(Class)modeClass completion:(DataTaskCompletionBlock)block {
-    NSURLSessionDataTask *dataTask = [self.manager GET:url parameters:parameters success:^(NSURLSessionDataTask *task, id jsonObject) {
+- (void)GET:(NSString *)url parameters:(NSDictionary *)parameters modelClass:(Class)modeClass completion:(DataTaskCompletionBlock)block {
+
+    NSMutableDictionary *paramsWithAuth = [NSMutableDictionary dictionaryWithDictionary:@{@"appid":self.apiKey}];
+    if (parameters) {
+        [paramsWithAuth addEntriesFromDictionary:parameters];
+    }
+
+    [self.manager GET:url parameters:[paramsWithAuth copy] success:^(NSURLSessionDataTask *task, id jsonObject) {
+
+        if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *object = jsonObject;
+            NSNumber *cod = object[@"cod"];
+            if (cod && cod.integerValue != 200) {
+                [self handleFailureWithTask:task error:[NSError errorWithDomain:[[NSURL URLWithString:url relativeToURL:self.manager.baseURL] absoluteString]
+                                                                           code:[cod integerValue]
+                                                                       userInfo:object]completion:block];
+                return;
+            }
+        }
+
         [self responseObjectWithJsonObject:jsonObject modelClass:modeClass withCompletion:^(id modelObject) {
             block(task, modelObject, nil);
         }];
@@ -25,7 +43,6 @@ typedef void (^ParserCompletionBlock)(id modelObject);
         [self handleFailureWithTask:task error:error completion:block];
 
     }];
-    return dataTask;
 }
 
 - (void)cancelAllTasks {

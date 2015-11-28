@@ -19,18 +19,16 @@
              @"wind" : @"wind",
              @"clouds" : @"clouds",
              @"rain" : @"rain",
-             @"steps" : @"steps",
              @"snow" : @"snow",
              @"dt" : @"dt",
              @"sys" : @"sys",
              @"id": @"id",
-             @"name": @"name",
-             @"cod": @"cod"};
+             @"name": @"name"};
     
 }
 
 + (NSValueTransformer *)coordJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[Coord class]];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Coord class]];
 }
 
 + (NSValueTransformer *)weatherJSONTransformer {
@@ -38,23 +36,23 @@
 }
 
 + (NSValueTransformer *)mainJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[Main class]];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Main class]];
 }
 
 + (NSValueTransformer *)windJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[Wind class]];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Wind class]];
 }
 
 + (NSValueTransformer *)cloudsJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[Clouds class]];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Clouds class]];
 }
 
 + (NSValueTransformer *)rainJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[Rain class]];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Rain class]];
 }
 
 + (NSValueTransformer *)snowJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[Snow class]];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Snow class]];
 }
 
 + (NSValueTransformer *)dtJSONTransformer {
@@ -62,7 +60,7 @@
 }
 
 + (NSValueTransformer *)sysJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:[Sys class]];
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Sys class]];
 }
 
 

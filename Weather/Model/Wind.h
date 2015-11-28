@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Mantle/Mantle.h>
 
-@interface Wind : MTLModel<MTLJSONSerializing>
+@interface Wind : MTLModel <MTLJSONSerializing>
 
 @property(nonatomic, copy) NSNumber *speed;
 @property(nonatomic, copy) NSNumber *deg;
