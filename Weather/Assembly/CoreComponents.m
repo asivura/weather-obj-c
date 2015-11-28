@@ -11,6 +11,7 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "CoreComponents.h"
 #import "WeatherClient.h"
+#import "DatabaseManager.h"
 #import "SessionManager.h"
 #import "WeatherClientImpl.h"
 
@@ -51,6 +52,15 @@
     }];
 }
 
+- (DatabaseManager *)dbManager {
+    return [TyphoonDefinition withClass:[DatabaseManager class] configuration:^(TyphoonDefinition *definition) {
+        [definition useInitializer:@selector(initWithDbName:) parameters:^(TyphoonMethod *initializer) {
+            [initializer injectParameterWith:TyphoonConfig(@"db.filename")];
+        }];
+        definition.scope = TyphoonScopeSingleton;
+
+    }];
+}
 
 
 @end

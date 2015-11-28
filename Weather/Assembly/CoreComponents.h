@@ -10,11 +10,14 @@
 
 @protocol WeatherClient;
 @class SessionManager;
+@class DatabaseManager;
 
 @interface CoreComponents : TyphoonAssembly
 
 - (id<WeatherClient>) weatherClient;
 
 - (SessionManager *) sessionManager;
+
+- (DatabaseManager *) dbManager;
 
 @end

@@ -6,5 +6,7 @@
 	<string>NSURL(http://api.openweathermap.org/data/2.5)</string>
 	<key>api.key</key>
 	<string>402251b746de2a233f9c58180a94e64e</string>
+	<key>db.filename</key>
+	<string>db.sqlite</string>
 </dict>
 </plist>
