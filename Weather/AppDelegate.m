@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "CitiesDao.h"
+#import "City.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -16,7 +18,26 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self addDefaultCities];
+    }
+
     return YES;
+}
+
+- (void)addDefaultCities {
+    NSArray *cities = @[
+            [[City alloc] initWithId:@3628374 name:@"San Francisco"],
+            [[City alloc] initWithId:@5202009 name:@"Moscow"],
+            [[City alloc] initWithId:@5128581 name:@"New York"]
+    ];
+
+    [self.citiesDao saveCities:cities completion:^{
+        NSLog(@"Default cities added");
+    }];
 }
 
 @end

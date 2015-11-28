@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CitiesDao;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) id<CitiesDao> citiesDao;
 
 @end
 

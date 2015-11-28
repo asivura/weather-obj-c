@@ -8,16 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <Mantle/Mantle.h>
-#import "Coord.h"
-#import "Weather.h"
-#import "Main.h"
-#import "Wind.h"
-#import "Clouds.h"
-#import "Rain.h"
-#import "Snow.h"
-#import "Sys.h"
+
+@class Coord;
+@class Main;
+@class Wind;
+@class Clouds;
+@class Rain;
+@class Snow;
+@class Sys;
+
 
 @interface City : MTLModel<MTLJSONSerializing>
+
+
+- (id)initWithId:(NSNumber *)identifier name:(NSString *)name;
+
 
 @property (nonatomic, copy) Coord *coord;
 @property (nonatomic, copy) NSArray *weather;

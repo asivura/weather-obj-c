@@ -11,14 +11,22 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "CoreComponents.h"
 #import "WeatherClient.h"
+#import "CitiesDao.h"
 #import "DatabaseManager.h"
-#import "SessionManager.h"
 #import "WeatherClientImpl.h"
+#import "CitiesDaoImpl.h"
 
 @implementation CoreComponents
+
 - (id <WeatherClient>)weatherClient {
     return [TyphoonDefinition withClass:[WeatherClientImpl class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(sessionManager) with:[self sessionManager]];
+    }];
+}
+
+- (id <CitiesDao>)citiesDao {
+    return [TyphoonDefinition withClass:[CitiesDaoImpl class] configuration:^(TyphoonDefinition *definition) {
+        [definition injectProperty:@selector(dbManager) with:[self dbManager]];
     }];
 }
 

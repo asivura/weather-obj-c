@@ -16,6 +16,7 @@
 {
     return [TyphoonDefinition withClass:[AppDelegate class] configuration:^(TyphoonDefinition *definition)
             {
+                [definition injectProperty:@selector(citiesDao) with:[_coreComponents citiesDao]];
             }];
 }
 

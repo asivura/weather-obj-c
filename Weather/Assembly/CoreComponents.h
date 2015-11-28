@@ -11,10 +11,13 @@
 @protocol WeatherClient;
 @class SessionManager;
 @class DatabaseManager;
+@protocol CitiesDao;
 
 @interface CoreComponents : TyphoonAssembly
 
 - (id<WeatherClient>) weatherClient;
+
+- (id<CitiesDao>) citiesDao;
 
 - (SessionManager *) sessionManager;
 

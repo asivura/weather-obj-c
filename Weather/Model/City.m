@@ -8,8 +8,27 @@
 
 #import "City.h"
 #import "DateFormatter.h"
+#import "Coord.h"
+#import "Main.h"
+#import "Wind.h"
+#import "Clouds.h"
+#import "Rain.h"
+#import "Snow.h"
+#import "Sys.h"
+#import "Weather.h"
 
 @implementation City
+
+- (id)initWithId:(NSNumber *)identifier name:(NSString *)name {
+    self = [super init];
+    if (self) {
+        self.id = identifier;
+        self.name = name;
+    }
+
+    return self;
+}
+
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{@"coord" : @"coord",
