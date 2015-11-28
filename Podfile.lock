@@ -20,21 +20,36 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - CocoaLumberjack (2.2.0):
+    - CocoaLumberjack/Default (= 2.2.0)
+    - CocoaLumberjack/Extensions (= 2.2.0)
+  - CocoaLumberjack/Core (2.2.0)
+  - CocoaLumberjack/Default (2.2.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.2.0):
+    - CocoaLumberjack/Default
   - Mantle (2.0.5):
     - Mantle/extobjc (= 2.0.5)
   - Mantle/extobjc (2.0.5)
   - Typhoon (3.4.4):
     - Typhoon/no-arc (= 3.4.4)
   - Typhoon/no-arc (3.4.4)
+  - YapDatabase (2.7.6):
+    - YapDatabase/standard (= 2.7.6)
+  - YapDatabase/standard (2.7.6):
+    - CocoaLumberjack (~> 2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Mantle
   - Typhoon
+  - YapDatabase
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   Typhoon: e937c62b9048f73a93c1aa94f00627d97cecd588
+  YapDatabase: 00e5a5d1b5dba1bd540ef644576233b5612e6122
 
 COCOAPODS: 0.39.0
