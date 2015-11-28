@@ -13,6 +13,8 @@
 @protocol WeatherClient <NSObject>
 
 - (void)loadWeatherForCityId:(NSString *) cityId completion:(DataTaskCompletionBlock)completion;
+- (void)loadWeatherForCityIds:(NSArray *) cityIds completion:(DataTaskCompletionBlock)completion;
+
 
 @end
 

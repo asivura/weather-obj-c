@@ -22,6 +22,10 @@
 
     }];
 
+    [self.weatherClient loadWeatherForCityIds:@[@"5391997", @"5601538"] completion:^(NSURLSessionDataTask *task, id responseObject, NSError *error) {
+        NSLog(@"Response: %@. Error %@", responseObject, error);
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {

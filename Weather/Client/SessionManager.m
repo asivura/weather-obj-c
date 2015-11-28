@@ -82,11 +82,12 @@ typedef void (^ParserCompletionBlock)(id modelObject);
             modelObject = jsonObject;
         } else {
             NSError *parseError = nil;
+            NSArray *list = jsonObject[@"list"];
 
-            if ([jsonObject isKindOfClass:[NSDictionary class]]) {
+            if (!list) {
                 modelObject = [MTLJSONAdapter modelOfClass:modelClass fromJSONDictionary:jsonObject error:&parseError];
-            } else if ([jsonObject isKindOfClass:[NSArray class]]) {
-                modelObject = [MTLJSONAdapter modelsOfClass:modelClass fromJSONArray:jsonObject error:&parseError];
+            } else {
+                modelObject = [MTLJSONAdapter modelsOfClass:modelClass fromJSONArray:list error:&parseError];
             }
 
             if (parseError)

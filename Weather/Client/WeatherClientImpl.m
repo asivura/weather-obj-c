@@ -12,7 +12,12 @@
 @implementation WeatherClientImpl
 
 -(void)loadWeatherForCityId:(NSString *)cityId completion:(DataTaskCompletionBlock)completion {
-    [self.sessionManager GET:@"weather" parameters:@{@"id":cityId} modelClass:[City class] completion:completion];
+    [self.sessionManager GET:@"weather" parameters:@{@"id":cityId, @"units":@"metric"} modelClass:[City class] completion:completion];
+}
+
+-(void)loadWeatherForCityIds:(NSArray *)cityIds completion:(DataTaskCompletionBlock)completion {
+    NSString *idParam = [cityIds componentsJoinedByString:@","];
+    [self.sessionManager GET:@"group" parameters:@{@"id":idParam, @"units":@"metric"} modelClass:[City class] completion:completion];
 }
 
 @end
