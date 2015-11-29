@@ -9,16 +9,13 @@
 #import "CitiesTableViewController.h"
 #import "WeatherClient.h"
 #import "CitiesDao.h"
-#import "DatabaseManager.h"
-#import "YapDatabase/YapDatabaseViewTransaction.h"
 #import "City.h"
 #import "Weather.h"
-#import <YapDatabase/YapDatabase.h>
+#import "FetchedResultsController.h"
 
-@interface CitiesTableViewController ()
+@interface CitiesTableViewController () <FetchedResultsControllerDelegate>
 
-@property(strong, nonatomic) YapDatabaseConnection *connection;
-@property(strong, nonatomic) YapDatabaseViewMappings *mappings;
+@property(strong, nonatomic) FetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -26,11 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.connection beginLongLivedReadTransaction];
-    [self.connection readWithBlock:^(YapDatabaseReadTransaction *transaction) {
-        [self.mappings updateWithTransaction:transaction];
-    }];
 
+    self.fetchedResultsController = [self.citiesDao fetchedResultsController];
+    self.fetchedResultsController.delegate = self;
     [self reloadCities];
 }
 
@@ -49,42 +44,28 @@
 
 }
 
-- (YapDatabaseViewMappings *)mappings {
-    if (!_mappings) {
-        _mappings = [[YapDatabaseViewMappings alloc] initWithGroups:@[@""] view:dbCitiesView];
-    }
-    return _mappings;
-}
-
-
-- (YapDatabaseConnection *)connection {
-    if (!_connection) {
-        _connection = [self.dbManager.db newConnection];
-    }
-    return _connection;
-}
-
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)sender {
-    return [self.mappings numberOfSections];
+    return [self.fetchedResultsController numberOfSections];
 }
 
 - (NSInteger)tableView:(UITableView *)sender numberOfRowsInSection:(NSInteger)section {
-    return [self.mappings numberOfItemsInSection:(NSUInteger) section];
+    return [self.fetchedResultsController numberOfItemsInSection:(NSUInteger) section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
 
-    __block City *city = nil;
-    [self.connection readWithBlock:^(YapDatabaseReadTransaction *transaction) {
-        YapDatabaseViewTransaction *extensionTransaction = (YapDatabaseViewTransaction *) [transaction extension:dbCitiesView];
-        city = [extensionTransaction objectAtIndexPath:indexPath withMappings:self.mappings];
-    }];
+    City *city = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = city.name;
     Weather *weather = city.weather.lastObject;
     cell.detailTextLabel.text = weather.descr;
     return cell;
+}
+
+- (void)controllerDidChangeContent:(FetchedResultsController *)controller sectionChanges:(NSArray *)sectionChanges rowChanges:(NSArray *)rowChanges {
+    [self.tableView beginUpdates];
+    [FetchedResultsController updateTableView:self.tableView sectionChanges:sectionChanges rowChanges:rowChanges];
+    [self.tableView endUpdates];
 }
 
 

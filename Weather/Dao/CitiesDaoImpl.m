@@ -6,9 +6,11 @@
 #import "CitiesDaoImpl.h"
 #import "DatabaseManager.h"
 #import "City.h"
+#import "FetchedResultsController.h"
 #import <YapDatabase/YapDatabaseConnection.h>
 #import <YapDatabase/YapDatabaseTransaction.h>
 #import <YapDatabase/YapDatabase.h>
+#import <YapDatabase/YapDatabaseViewMappings.h>
 
 @interface  CitiesDaoImpl()
 
@@ -24,6 +26,11 @@
     }
 
     return _connection;
+}
+
+- (FetchedResultsController *)fetchedResultsController {
+    YapDatabaseViewMappings *mappings = [[YapDatabaseViewMappings alloc] initWithGroups:@[@""] view:dbCitiesView];
+    return [[FetchedResultsController alloc] initWithConnection:[self.dbManager.db newConnection] mappings:mappings];
 }
 
 - (void)getAllKeysWithCompletion:(void (^)(NSArray *keys))block {

@@ -6,9 +6,11 @@
 #import <Foundation/Foundation.h>
 
 @class City;
+@class FetchedResultsController;
 
 @protocol CitiesDao <NSObject>
 
+- (FetchedResultsController *)fetchedResultsController;
 - (void)getAllKeysWithCompletion:(void (^)(NSArray *keys))block;
 
 - (void)saveAll:(NSArray *)cities completion:(dispatch_block_t) block;

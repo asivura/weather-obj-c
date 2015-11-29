@@ -32,18 +32,18 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{@"coord" : @"coord",
-             @"weather" : @"weather",
-             @"base" : @"base",
-             @"main" : @"main",
-             @"wind" : @"wind",
-             @"clouds" : @"clouds",
-             @"rain" : @"rain",
-             @"snow" : @"snow",
-             @"dt" : @"dt",
-             @"sys" : @"sys",
-             @"id": @"id",
-             @"name": @"name"};
-    
+            @"weather" : @"weather",
+            @"base" : @"base",
+            @"main" : @"main",
+            @"wind" : @"wind",
+            @"clouds" : @"clouds",
+            @"rain" : @"rain",
+            @"snow" : @"snow",
+            @"dt" : @"dt",
+            @"sys" : @"sys",
+            @"id" : @"id",
+            @"name" : @"name"};
+
 }
 
 + (NSValueTransformer *)coordJSONTransformer {

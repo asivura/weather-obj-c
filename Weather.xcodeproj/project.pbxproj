@@ -28,6 +28,7 @@
 		8B373BBE1C092FAE001E37FF /* CitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BBD1C092FAE001E37FF /* CitiesTableViewController.m */; };
 		8B373BC11C098ADD001E37FF /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BC01C098ADD001E37FF /* DatabaseManager.m */; };
 		972DBA9559296BDAD8553710 /* libPods-Weather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B9717E9971F91CBE7EEAA8 /* libPods-Weather.a */; };
+		D578D0ADCD58916A299798B2 /* FetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D1877BBE90859B4F1AF3 /* FetchedResultsController.m */; };
 		D578D52643772FEE4C18ED2B /* TemperatureFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = D578DCDECAB00112A90C4E3D /* TemperatureFormatter.m */; };
 		D578D649180BB499079C5C8B /* CitiesDaoImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D9627EC770D31D994685 /* CitiesDaoImpl.m */; };
 		D578D8FF87ABC1FC1E764480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D578D0208987D969144E011B /* Main.storyboard */; };
@@ -77,11 +78,13 @@
 		8B373BBD1C092FAE001E37FF /* CitiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesTableViewController.m; sourceTree = "<group>"; };
 		8B373BBF1C098ADD001E37FF /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
 		8B373BC01C098ADD001E37FF /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
+		D578D1877BBE90859B4F1AF3 /* FetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsController.m; sourceTree = "<group>"; };
 		D578D2B8690F0FDD74B8CF27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weather/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		D578D401EBE1B0B3640D17F0 /* TemperatureFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureFormatter.h; sourceTree = "<group>"; };
 		D578D4D891CC50AD02BAD57B /* CitiesDaoImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesDaoImpl.h; sourceTree = "<group>"; };
 		D578D798B2589CA336BF33BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weather/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		D578D9627EC770D31D994685 /* CitiesDaoImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesDaoImpl.m; sourceTree = "<group>"; };
+		D578D9901E0B3CA010AB2A36 /* FetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsController.h; sourceTree = "<group>"; };
 		D578DB6E6DAB17ACD6501BDC /* CitiesDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesDao.h; sourceTree = "<group>"; };
 		D578DCDECAB00112A90C4E3D /* TemperatureFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureFormatter.m; sourceTree = "<group>"; };
 		E86D148281B450DA16A2CFEE /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				D578DB6E6DAB17ACD6501BDC /* CitiesDao.h */,
 				D578D9627EC770D31D994685 /* CitiesDaoImpl.m */,
 				D578D4D891CC50AD02BAD57B /* CitiesDaoImpl.h */,
+				D578D1877BBE90859B4F1AF3 /* FetchedResultsController.m */,
+				D578D9901E0B3CA010AB2A36 /* FetchedResultsController.h */,
 			);
 			path = Dao;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				8B373BBB1C092D55001E37FF /* WeatherClientImpl.m in Sources */,
 				D578D52643772FEE4C18ED2B /* TemperatureFormatter.m in Sources */,
 				D578D649180BB499079C5C8B /* CitiesDaoImpl.m in Sources */,
+				D578D0ADCD58916A299798B2 /* FetchedResultsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
