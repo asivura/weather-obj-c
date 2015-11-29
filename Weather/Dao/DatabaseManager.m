@@ -7,6 +7,7 @@
 //
 
 #import "DatabaseManager.h"
+#import <YapDatabase/YapDatabaseView.h>
 #import <YapDatabase/YapDatabase.h>
 
 NSString *const dbCitiesCollection = @"citiesCollection";
@@ -30,7 +31,23 @@ NSString *const dbCitiesView = @"citiesView";
 - (void)setupDatabase:(NSString *)dbName {
     NSString *dbPath = [[self class] dbPathWithDbName:dbName];
     self.db = [[YapDatabase alloc] initWithPath:dbPath];
+    [self.db registerExtension:[self citiesView] withName:dbCitiesView];
 
+}
+
+- (YapDatabaseView *)citiesView {
+    YapDatabaseViewGrouping *grouping = [YapDatabaseViewGrouping withKeyBlock:^NSString *(YapDatabaseReadTransaction *transaction, NSString *collection, NSString *key) {
+        if (![collection isEqualToString:dbCitiesCollection]) {
+            return nil;
+        }
+        return @"all";
+    }];
+
+    YapDatabaseViewSorting *sorting = [YapDatabaseViewSorting withKeyBlock:^NSComparisonResult(YapDatabaseReadTransaction *transaction, NSString *group, NSString *collection1, NSString *key1, NSString *collection2, NSString *key2) {
+        return [key1 compare:key2];
+    }];
+
+    return [[YapDatabaseView alloc] initWithGrouping:grouping sorting:sorting];
 }
 
 + (NSString *)dbPathWithDbName:(NSString *)dbName {

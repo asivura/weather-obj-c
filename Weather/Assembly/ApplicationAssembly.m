@@ -23,7 +23,8 @@
 - (CitiesTableViewController *)citiesTableViewController {
     return [TyphoonDefinition withClass:[CitiesTableViewController class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(weatherClient) with:[_coreComponents weatherClient]];
-
+        [definition injectProperty:@selector(citiesDao) with:[_coreComponents citiesDao]];
+        [definition injectProperty:@selector(dbManager) with:[_coreComponents dbManager]];
     }];
 }
 

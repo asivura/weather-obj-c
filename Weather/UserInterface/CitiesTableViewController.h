@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @protocol WeatherClient;
+@protocol CitiesDao;
+@class DatabaseManager;
 
 @interface CitiesTableViewController : UITableViewController
 
 @property (nonatomic, strong) id<WeatherClient> weatherClient;
+@property (nonatomic, strong) id<CitiesDao> citiesDao;
+@property (nonatomic, strong) DatabaseManager *dbManager;
+
+
 
 @end
