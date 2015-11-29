@@ -35,7 +35,7 @@
             [[City alloc] initWithId:@5128581 name:@"New York"]
     ];
 
-    [self.citiesDao saveCities:cities completion:^{
+    [self.citiesDao saveAll:cities completion:^{
         NSLog(@"Default cities added");
     }];
 }

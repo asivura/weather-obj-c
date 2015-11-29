@@ -12,8 +12,8 @@
 #import "DatabaseManager.h"
 #import "YapDatabase/YapDatabaseViewTransaction.h"
 #import "City.h"
+#import "Weather.h"
 #import <YapDatabase/YapDatabase.h>
-#import <YapDatabase/YapDatabaseViewMappings.h>
 
 @interface CitiesTableViewController ()
 
@@ -28,30 +28,30 @@
     [super viewDidLoad];
     [self.connection beginLongLivedReadTransaction];
     [self.connection readWithBlock:^(YapDatabaseReadTransaction *transaction) {
-
         [self.mappings updateWithTransaction:transaction];
     }];
-//    [self.weatherClient loadWeatherForCityId:@"5391997" completion:^(NSURLSessionDataTask *task, id responseObject, NSError *error) {
-//        NSLog(@"Response: %@. Error %@", responseObject, error);
-//
-//    }];
-//
-//    [self.weatherClient loadWeatherForCityIds:@[@"5391997", @"5601538"] completion:^(NSURLSessionDataTask *task, id responseObject, NSError *error) {
-//        NSLog(@"Response: %@. Error %@", responseObject, error);
-//    }];
 
-
-
+    [self reloadCities];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)reloadCities {
+    [self.citiesDao getAllKeysWithCompletion:^(NSArray *keys) {
+        [self.weatherClient loadWeatherForCityIds:keys completion:^(NSURLSessionDataTask *task, id responseObject, NSError *error) {
+            if (!error) {
+                [self.citiesDao saveAll:responseObject completion:^{
+                    NSLog(@"Cities loaded");
+                }];
+            } else {
+                NSLog(@"Cities load error %@", error);
+            }
+        }];
+    }];
 
 }
 
 - (YapDatabaseViewMappings *)mappings {
     if (!_mappings) {
-        _mappings = [[YapDatabaseViewMappings alloc] initWithGroups:@[@"all"] view:dbCitiesView];
+        _mappings = [[YapDatabaseViewMappings alloc] initWithGroups:@[@""] view:dbCitiesView];
     }
     return _mappings;
 }
@@ -82,6 +82,8 @@
         city = [extensionTransaction objectAtIndexPath:indexPath withMappings:self.mappings];
     }];
     cell.textLabel.text = city.name;
+    Weather *weather = city.weather.lastObject;
+    cell.detailTextLabel.text = weather.descr;
     return cell;
 }
 

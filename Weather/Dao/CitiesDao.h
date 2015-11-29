@@ -9,9 +9,11 @@
 
 @protocol CitiesDao <NSObject>
 
-- (void)saveCities:(NSArray *)cities completion:(dispatch_block_t) block;
-- (void)saveCity:(City *)city completion:(dispatch_block_t) block;
-- (void)deleteCities:(NSArray *)cities completion:(dispatch_block_t) block;
-- (void)deleteCity:(City *)city completion:(dispatch_block_t) block;
+- (void)getAllKeysWithCompletion:(void (^)(NSArray *keys))block;
+
+- (void)saveAll:(NSArray *)cities completion:(dispatch_block_t) block;
+- (void)save:(City *)city completion:(dispatch_block_t) block;
+- (void)removeAll:(NSArray *)cities completion:(dispatch_block_t) block;
+- (void)remove:(City *)city completion:(dispatch_block_t) block;
 
 @end

@@ -26,7 +26,16 @@
     return _connection;
 }
 
-- (void)saveCities:(NSArray *)cities completion:(dispatch_block_t)block {
+- (void)getAllKeysWithCompletion:(void (^)(NSArray *keys))block {
+    __block NSArray *result = nil;
+    [self.connection asyncReadWithBlock:^(YapDatabaseReadTransaction *transaction) {
+        result = [transaction allKeysInCollection:dbCitiesCollection];
+    } completionBlock:^{
+        block(result);
+    }];
+}
+
+- (void)saveAll:(NSArray *)cities completion:(dispatch_block_t)block {
     [self.connection asyncReadWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction) {
         for (City *city in cities) {
             [transaction setObject:city forKey:city.id.stringValue inCollection:dbCitiesCollection];
@@ -35,12 +44,12 @@
 
 }
 
-- (void)saveCity:(City *)city completion:(dispatch_block_t)block {
-    [self saveCities:@[city] completion:block];
+- (void)save:(City *)city completion:(dispatch_block_t)block {
+    [self saveAll:@[city] completion:block];
 
 }
 
-- (void)deleteCities:(NSArray *)cities completion:(dispatch_block_t)block {
+- (void)removeAll:(NSArray *)cities completion:(dispatch_block_t)block {
     [self.connection asyncReadWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction) {
          for(City *city in cities) {
              [transaction removeObjectForKey:city.id.stringValue inCollection:dbCitiesCollection];
@@ -49,8 +58,8 @@
 
 }
 
-- (void)deleteCity:(City *)city completion:(dispatch_block_t)block {
-    [self deleteCities:@[city] completion:block];
+- (void)remove:(City *)city completion:(dispatch_block_t)block {
+    [self removeAll:@[city] completion:block];
 
 }
 

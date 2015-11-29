@@ -40,7 +40,7 @@ NSString *const dbCitiesView = @"citiesView";
         if (![collection isEqualToString:dbCitiesCollection]) {
             return nil;
         }
-        return @"all";
+        return @"";
     }];
 
     YapDatabaseViewSorting *sorting = [YapDatabaseViewSorting withKeyBlock:^NSComparisonResult(YapDatabaseReadTransaction *transaction, NSString *group, NSString *collection1, NSString *key1, NSString *collection2, NSString *key2) {
