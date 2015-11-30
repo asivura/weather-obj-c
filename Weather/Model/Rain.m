@@ -11,7 +11,7 @@
 @implementation Rain
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
-    return @{@"3h" : @"volume3h"};
+    return @{@"volume3h" : @"3h"};
 }
 
 @end

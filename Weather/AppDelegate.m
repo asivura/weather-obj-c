@@ -30,8 +30,8 @@
 
 - (void)addDefaultCities {
     NSArray *cities = @[
-            [[City alloc] initWithId:@3628374 name:@"San Francisco"],
-            [[City alloc] initWithId:@5202009 name:@"Moscow"],
+            [[City alloc] initWithId:@5391959 name:@"San Francisco"],
+            [[City alloc] initWithId:@524901 name:@"Moscow"],
             [[City alloc] initWithId:@5128581 name:@"New York"]
     ];
 

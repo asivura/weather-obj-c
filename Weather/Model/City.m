@@ -14,6 +14,7 @@
 #import "Clouds.h"
 #import "Rain.h"
 #import "Snow.h"
+#import "FetchedObjectController.h"
 #import "Sys.h"
 #import "Weather.h"
 

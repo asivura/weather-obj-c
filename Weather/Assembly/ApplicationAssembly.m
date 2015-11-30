@@ -9,6 +9,7 @@
 #import "ApplicationAssembly.h"
 #import "CitiesTableViewController.h"
 #import "CoreComponents.h"
+#import "CityTableViewController.h"
 
 @implementation ApplicationAssembly
 
@@ -27,5 +28,13 @@
         [definition injectProperty:@selector(dbManager) with:[_coreComponents dbManager]];
     }];
 }
+
+- (CityTableViewController *)cityTableViewController {
+    return [TyphoonDefinition withClass:[CityTableViewController class] configuration:^(TyphoonDefinition *definition) {
+        [definition injectProperty:@selector(citiesDao) with:[_coreComponents citiesDao]];
+        [definition injectProperty:@selector(weatherClient) with:[_coreComponents weatherClient]];
+    }];
+}
+
 
 @end

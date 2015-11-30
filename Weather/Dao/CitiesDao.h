@@ -7,10 +7,12 @@
 
 @class City;
 @class FetchedResultsController;
+@class FetchedObjectController;
 
 @protocol CitiesDao <NSObject>
 
 - (FetchedResultsController *)fetchedResultsController;
+- (FetchedObjectController *)fetchedObjectControllerWithKey:(NSString *)key;
 - (void)getAllKeysWithCompletion:(void (^)(NSArray *keys))block;
 
 - (void)saveAll:(NSArray *)cities completion:(dispatch_block_t) block;

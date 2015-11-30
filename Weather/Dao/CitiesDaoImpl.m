@@ -7,14 +7,14 @@
 #import "DatabaseManager.h"
 #import "City.h"
 #import "FetchedResultsController.h"
-#import <YapDatabase/YapDatabaseConnection.h>
+#import "FetchedObjectController.h"
 #import <YapDatabase/YapDatabaseTransaction.h>
 #import <YapDatabase/YapDatabase.h>
 #import <YapDatabase/YapDatabaseViewMappings.h>
 
-@interface  CitiesDaoImpl()
+@interface CitiesDaoImpl ()
 
-@property (strong, nonatomic) YapDatabaseConnection *connection;
+@property(strong, nonatomic) YapDatabaseConnection *connection;
 
 @end
 
@@ -33,11 +33,17 @@
     return [[FetchedResultsController alloc] initWithConnection:[self.dbManager.db newConnection] mappings:mappings];
 }
 
+- (FetchedObjectController *)fetchedObjectControllerWithKey:(NSString *)key {
+    return [[FetchedObjectController alloc] initWithConnection:[self.dbManager.db newConnection]
+                                                           key:key
+                                                    collection:dbCitiesCollection];
+}
+
 - (void)getAllKeysWithCompletion:(void (^)(NSArray *keys))block {
     __block NSArray *result = nil;
     [self.connection asyncReadWithBlock:^(YapDatabaseReadTransaction *transaction) {
         result = [transaction allKeysInCollection:dbCitiesCollection];
-    } completionBlock:^{
+    }                   completionBlock:^{
         block(result);
     }];
 }
@@ -47,7 +53,7 @@
         for (City *city in cities) {
             [transaction setObject:city forKey:city.id.stringValue inCollection:dbCitiesCollection];
         }
-    } completionBlock:block];
+    }                        completionBlock:block];
 
 }
 
@@ -58,10 +64,10 @@
 
 - (void)removeAll:(NSArray *)cities completion:(dispatch_block_t)block {
     [self.connection asyncReadWriteWithBlock:^(YapDatabaseReadWriteTransaction *transaction) {
-         for(City *city in cities) {
-             [transaction removeObjectForKey:city.id.stringValue inCollection:dbCitiesCollection];
-         }
-    } completionBlock:block];
+        for (City *city in cities) {
+            [transaction removeObjectForKey:city.id.stringValue inCollection:dbCitiesCollection];
+        }
+    }                        completionBlock:block];
 
 }
 

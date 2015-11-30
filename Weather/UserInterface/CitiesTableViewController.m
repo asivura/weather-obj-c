@@ -12,6 +12,7 @@
 #import "City.h"
 #import "Weather.h"
 #import "FetchedResultsController.h"
+#import "CityTableViewController.h"
 
 @interface CitiesTableViewController () <FetchedResultsControllerDelegate>
 
@@ -24,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self.refreshControl addTarget:self action:@selector(reloadCities) forControlEvents:UIControlEventValueChanged];
+
     self.fetchedResultsController = [self.citiesDao fetchedResultsController];
     self.fetchedResultsController.delegate = self;
     [self reloadCities];
@@ -35,9 +38,11 @@
             if (!error) {
                 [self.citiesDao saveAll:responseObject completion:^{
                     NSLog(@"Cities loaded");
+                    [self.refreshControl endRefreshing];
                 }];
             } else {
                 NSLog(@"Cities load error %@", error);
+                [self.refreshControl endRefreshing];
             }
         }];
     }];
@@ -66,6 +71,14 @@
     [self.tableView beginUpdates];
     [FetchedResultsController updateTableView:self.tableView sectionChanges:sectionChanges rowChanges:rowChanges];
     [self.tableView endUpdates];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[CityTableViewController class]]) {
+        CityTableViewController *controller = (CityTableViewController *) segue.destinationViewController;
+        City *city = [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+        controller.key = city.id.stringValue;
+    }
 }
 
 

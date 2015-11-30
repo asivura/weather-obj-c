@@ -11,6 +11,7 @@
 
 @class CitiesTableViewController;
 @class CoreComponents;
+@class CityTableViewController;
 
 @interface ApplicationAssembly : TyphoonAssembly
 
@@ -19,5 +20,7 @@
 - (AppDelegate *)appDelegate;
 
 - (CitiesTableViewController *) citiesTableViewController;
+
+- (CityTableViewController *) cityTableViewController;
 
 @end
