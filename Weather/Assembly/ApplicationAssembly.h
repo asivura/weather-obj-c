@@ -12,6 +12,7 @@
 @class CitiesTableViewController;
 @class CoreComponents;
 @class CityTableViewController;
+@class CitiesSearchTableViewController;
 
 @interface ApplicationAssembly : TyphoonAssembly
 
@@ -22,5 +23,7 @@
 - (CitiesTableViewController *) citiesTableViewController;
 
 - (CityTableViewController *) cityTableViewController;
+
+- (CitiesSearchTableViewController *) citiesSearchTableViewController;
 
 @end

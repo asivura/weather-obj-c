@@ -28,6 +28,8 @@
 		8B373BBE1C092FAE001E37FF /* CitiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BBD1C092FAE001E37FF /* CitiesTableViewController.m */; };
 		8B373BC11C098ADD001E37FF /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BC01C098ADD001E37FF /* DatabaseManager.m */; };
 		8B373BC71C0BF747001E37FF /* CityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B373BC61C0BF747001E37FF /* CityTableViewController.m */; };
+		8B91ACD01C0D6DF400B42D67 /* CitiesSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B91ACCF1C0D6DF400B42D67 /* CitiesSearchTableViewController.m */; };
+		8B91ACD31C0D96BF00B42D67 /* CitySearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B91ACD21C0D96BF00B42D67 /* CitySearchResultTableViewCell.m */; };
 		972DBA9559296BDAD8553710 /* libPods-Weather.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B9717E9971F91CBE7EEAA8 /* libPods-Weather.a */; };
 		D578D0ADCD58916A299798B2 /* FetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D1877BBE90859B4F1AF3 /* FetchedResultsController.m */; };
 		D578D0CB25E301D3C4FB5195 /* FetchedObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = D578D8681799932D11999384 /* FetchedObjectController.m */; };
@@ -82,6 +84,10 @@
 		8B373BC01C098ADD001E37FF /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
 		8B373BC51C0BF747001E37FF /* CityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTableViewController.h; sourceTree = "<group>"; };
 		8B373BC61C0BF747001E37FF /* CityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTableViewController.m; sourceTree = "<group>"; };
+		8B91ACCE1C0D6DF400B42D67 /* CitiesSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesSearchTableViewController.h; sourceTree = "<group>"; };
+		8B91ACCF1C0D6DF400B42D67 /* CitiesSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesSearchTableViewController.m; sourceTree = "<group>"; };
+		8B91ACD11C0D96BF00B42D67 /* CitySearchResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CitySearchResultTableViewCell.h; path = Views/CitySearchResultTableViewCell.h; sourceTree = "<group>"; };
+		8B91ACD21C0D96BF00B42D67 /* CitySearchResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CitySearchResultTableViewCell.m; path = Views/CitySearchResultTableViewCell.m; sourceTree = "<group>"; };
 		D578D1877BBE90859B4F1AF3 /* FetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsController.m; sourceTree = "<group>"; };
 		D578D2B8690F0FDD74B8CF27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Weather/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		D578D401EBE1B0B3640D17F0 /* TemperatureFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureFormatter.h; sourceTree = "<group>"; };
@@ -169,6 +175,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8B91ACD41C0D96C500B42D67 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B91ACD11C0D96BF00B42D67 /* CitySearchResultTableViewCell.h */,
+				8B91ACD21C0D96BF00B42D67 /* CitySearchResultTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		D578D2DD4BE22330F9DCA067 /* Dao */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +269,9 @@
 				8B373BBD1C092FAE001E37FF /* CitiesTableViewController.m */,
 				8B373BC51C0BF747001E37FF /* CityTableViewController.h */,
 				8B373BC61C0BF747001E37FF /* CityTableViewController.m */,
+				8B91ACCE1C0D6DF400B42D67 /* CitiesSearchTableViewController.h */,
+				8B91ACCF1C0D6DF400B42D67 /* CitiesSearchTableViewController.m */,
+				8B91ACD41C0D96C500B42D67 /* Views */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
@@ -394,11 +412,13 @@
 				8B373B921C0791E0001E37FF /* ApplicationAssembly.m in Sources */,
 				8B373BAF1C07CFBF001E37FF /* Coord.m in Sources */,
 				8B373BB51C07E32A001E37FF /* SessionManager.m in Sources */,
+				8B91ACD01C0D6DF400B42D67 /* CitiesSearchTableViewController.m in Sources */,
 				8B373BA91C07CF39001E37FF /* Snow.m in Sources */,
 				8B373B781C06C9EA001E37FF /* AppDelegate.m in Sources */,
 				8B373B8F1C0791BD001E37FF /* CoreComponents.m in Sources */,
 				8B373B751C06C9EA001E37FF /* main.m in Sources */,
 				8B373BBB1C092D55001E37FF /* WeatherClientImpl.m in Sources */,
+				8B91ACD31C0D96BF00B42D67 /* CitySearchResultTableViewCell.m in Sources */,
 				D578D52643772FEE4C18ED2B /* TemperatureFormatter.m in Sources */,
 				D578D649180BB499079C5C8B /* CitiesDaoImpl.m in Sources */,
 				D578D0ADCD58916A299798B2 /* FetchedResultsController.m in Sources */,

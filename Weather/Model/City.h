@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Mantle/Mantle.h>
+#import <Mantle/MTLModel.h>
+#import <Mantle/MTLJSONAdapter.h>
 
 @class Coord;
 @class Main;

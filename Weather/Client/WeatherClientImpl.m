@@ -20,4 +20,9 @@
     [self.sessionManager GET:@"group" parameters:@{@"id":idParam, @"units":@"metric"} modelClass:[City class] completion:completion];
 }
 
+- (void)findCitiesForQuery:(NSString *)query completion:(DataTaskCompletionBlock)completion {
+    [self.sessionManager GET:@"find" parameters:@{@"q":query, @"units":@"metric", @"type":@"like"} modelClass:[City class] completion:completion];
+}
+
+
 @end

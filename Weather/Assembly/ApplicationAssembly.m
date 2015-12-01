@@ -10,6 +10,7 @@
 #import "CitiesTableViewController.h"
 #import "CoreComponents.h"
 #import "CityTableViewController.h"
+#import "CitiesSearchTableViewController.h"
 
 @implementation ApplicationAssembly
 
@@ -31,6 +32,14 @@
 
 - (CityTableViewController *)cityTableViewController {
     return [TyphoonDefinition withClass:[CityTableViewController class] configuration:^(TyphoonDefinition *definition) {
+        [definition injectProperty:@selector(citiesDao) with:[_coreComponents citiesDao]];
+        [definition injectProperty:@selector(weatherClient) with:[_coreComponents weatherClient]];
+    }];
+}
+
+- (CitiesSearchTableViewController *)citiesSearchTableViewController {
+
+    return [TyphoonDefinition withClass:[CitiesSearchTableViewController class] configuration:^(TyphoonDefinition *definition) {
         [definition injectProperty:@selector(citiesDao) with:[_coreComponents citiesDao]];
         [definition injectProperty:@selector(weatherClient) with:[_coreComponents weatherClient]];
     }];

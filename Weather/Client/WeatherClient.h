@@ -14,6 +14,7 @@
 
 - (void)loadWeatherForCityId:(NSString *) cityId completion:(DataTaskCompletionBlock)completion;
 - (void)loadWeatherForCityIds:(NSArray *) cityIds completion:(DataTaskCompletionBlock)completion;
+- (void)findCitiesForQuery:(NSString *)query completion:(DataTaskCompletionBlock)completion;
 
 
 @end
