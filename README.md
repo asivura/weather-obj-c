@@ -2,7 +2,7 @@
 
 The sample shows how to:
 
-- Designing architecture of the iOS app with Typhoon
+- Designing architecture of the iOS app with dependency injection framework Typhoon
 https://github.com/appsquickly/Typhoon
 
 - Loading data from server with AFNetworking
